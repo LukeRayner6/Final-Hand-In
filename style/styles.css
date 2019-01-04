@@ -2,6 +2,7 @@
   padding: 0;
   margin: 0;
   border: 0;
+  font-family: 'Ubuntu', sans-serif;
 }
 body {
   margin: 0;
@@ -9,7 +10,7 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
   color: black;
-  background-color: darkred;
+  background-color: #f8f8f8;
 }
 /* use of * wildcard selector known to be slow so only for demo!  */
 body > * {
@@ -30,14 +31,28 @@ body > * {
 header {
   grid-area: header;
   background: darkred;
+  box-shadow: 0px 4px 5px 0px rgba(122,112,122,1);
 }
 .menu {
+  padding-top: 25px;
   padding-bottom: 25px;
   text-align: center;
 }
+.menu2 {
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+#menu-nav2 {
+  grid-area: side;
+  box-shadow: -5px 0px 5px 0px rgba(122,112,122,1);
+}
 nav {
   grid-area: menu;
+  margin: 0;
+  padding: 0;
   background: darkred;
+  box-shadow: 4px 0px 5px 0px rgba(122,112,122,1);
 }
 nav a {
   text-decoration: none;
@@ -46,18 +61,24 @@ nav a {
 nav ul {
   list-style: none;
   text-align: center;
+  width: 100%;
 }
 nav li {
-  height: 5%;
+  height: 20px;
   width: 100%;
   text-align: center;
+  transition: box-shadow 1s;
 }
 nav ul li a {
   padding: 0;
   margin: 0;
 }
-nav a:hover {
-  color: white;
+nav li:hover {
+  box-shadow: inset 0 -100px 0 0 black;
+  color: black;
+}
+nav li:hover a {
+  color: darkred;
 }
 figure {
   grid-area: figure;
@@ -75,7 +96,6 @@ main {
   grid-area: content;
   /* increasing the height of one element increases all row heights */
   /*height: 25vh;*/
-  background: darkred;
 }
   /* Start of form */
   .main-form {
@@ -121,45 +141,142 @@ form {
     grid-template-columns: 1fr 3fr 1fr;
    grid-template-rows: 10vh 50vh 50vh ;
     grid-template-areas:
-      "figure header  header  header  header  header  header  header"
-      "menu  menu  menu  menu  menu  menu  menu  menu"
-      "content content content content content content content content"
-      "content content content content content content content content";
+      "figure header  header"
+      "menu  menu  menu  "
+      "content content content"
+      "content content content"
+      "side side side";
 
   }
 }
+
 @media screen and (min-width: 600px) {
   .grid {
-    grid-template-columns: 1fr 9fr;
+    grid-template-columns: 1fr 9fr 1fr;
     /*grid-template-rows: 1fr 1fr 1fr 1fr;*/
     /*or set the rows to 'view height (vh)'*/
-    grid-template-rows: 10vh 40vh 50vh ;
+    grid-template-rows: 10vh 100vh 1vh;
     grid-template-areas:
-      "figure  header  "
-      "menu  content"
-      "menu  content";
+      "figure  header header"
+      "menu  content side"
+      "menu  content side";
     }
   }
-    *********
   nav {
 	   justify-content: flex-start;
   }
   nav a {
 	   padding: 1em;
   }
-  form {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  background-color: #C2C2C2;
-  width: 25%;
-  height: auto;
-  padding: 1%;
-  box-shadow: 0 5px 20px black;
-}
 input {
   margin: 3%;
   }
+
+/* Home page content */
+#searchForm {
+  height: auto;
+  width: 50%;
+}
+.wrapper-home {
+  height: 100%;
+  width: 100%;
+}
+
+/* start of home */
+ul {
+  list-style-type: none;
+  display: table;
+  width: 90%;
+  border-spacing: 0 10px;
+}
+li {
+  display: table-row;
+}
+li strong, li .txt, li .langs {
+  display: table-cell;
+  vertical-align: middle;
+}
+img {
+  display: table-cell;
+  padding-right: 10px;
+}
+li .txt {
+  width: 60%;
+  padding-right: 10px;
+}
+li:nth-child(even) {
+  background: #eee;
+}
+.main-home {
+height: 90%;
+order: 2;
+display: flex;
+justify-content: left;
+align-items: center;
+flex-wrap: wrap;
+flex-direction: row;
+}
+.main-home article {
+height: 10vmin;
+width: 40vmin;
+background-color:black;
+border: 1vmin solid black;
+border-radius: 15px;
+display: flex;
+flex-direction: row;
+justify-content: flex-start;
+align-items: center;
+margin: 2px;
+}
+.home-left {
+  width: 40vmin;
+  margin: 2px;
+}
+.main-home section {
+margin: .5%;
+}
+.ole img {
+height: 100%;
+width: auto;
+}
+.ole h2 {
+color: oldlace;
+text-shadow: 2px 2px 2px black;
+font-size: 4vmin;
+margin: 10%;
+}
+.goals img {
+height: 100% ;
+width: auto;
+}
+.goals h2 {
+color: oldlace;
+text-shadow: 2px 2px 2px black;
+font-size: 2.5vmin;
+margin: 10%;
+}
+.players img {
+height: 100%;
+width: auto;
+}
+.players h2 {
+color: oldlace;
+text-shadow: 2px 2px 2px black;
+font-size: 3.5vmin;
+margin: 10%;
+}
+
+.main-home article:hover {
+transform: scale(1.1);
+}
+
+.wiki-label {
+}
+
+/* End of footer-every page */
+
+/* End of home page content */
+
   /* accordian faq */
   .accordion {
       background-color: #eee;
@@ -295,3 +412,53 @@ input {
   transform: scale(1.1);
 }
 /* end of links.html */
+
+/* footer */
+footer {
+  grid-area: footer;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #333;
+  order: 3;
+}
+footer a {
+  color: #9fff80;
+  margin-left: 1vmin;
+  margin-right: 1vmin;
+  font-size: 2vmin;
+}
+.icons {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+i {
+  color: white;
+  cursor: pointer;
+  font-size: 2vmin;
+}
+i p {
+  display: none;
+  font-size: 2vmin;
+  transition: all 2s;
+  margin-left: 1vmin;
+}
+i:hover {
+  color: #9fff80;
+}
+i:hover p {
+  color: #9fff80;
+  display: inline-block;
+}
+.cr {
+  display: flex;
+  align-items: center;
+  margin-right: 10vmin;
+  width: 25%;
+  height: 100%;
+}
