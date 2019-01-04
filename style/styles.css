@@ -9,6 +9,7 @@ body {
   font-weight: bold;
   font-size: 1.5rem;
   color: black;
+  background-color: darkred;
 }
 /* use of * wildcard selector known to be slow so only for demo!  */
 body > * {
@@ -24,19 +25,15 @@ body > * {
     "header  header"
     "menu    menu";
 }
-/*
-"header  header"
-"intro   figure"
-"content content"
-"menu    menu"
-"footer  footer";
-*/
+
+
 header {
   grid-area: header;
   background: darkred;
 }
 .menu {
   padding-bottom: 25px;
+  text-align: center;
 }
 nav {
   grid-area: menu;
@@ -48,10 +45,12 @@ nav a {
 }
 nav ul {
   list-style: none;
+  text-align: center;
 }
 nav li {
   height: 5%;
   width: 100%;
+  text-align: center;
 }
 nav ul li a {
   padding: 0;
@@ -64,16 +63,19 @@ figure {
   grid-area: figure;
   background: darkred;
   margin: 0;
-  border-right: black 2px solid;
-  border-bottom: black 2px solid;
+  padding-top: 10px;
   text-align: center;
 
+}
+figure img {
+  height: 50px;
+  width: 50px;
 }
 main {
   grid-area: content;
   /* increasing the height of one element increases all row heights */
   /*height: 25vh;*/
-  background: white;
+  background: darkred;
 }
   /* Start of form */
   .main-form {
@@ -112,7 +114,6 @@ form {
 .button_form {
   width: 20%;
   height: 6%;
-  transition: all 0.5s;
   cursor: pointer;
 }
 @media screen and (min-width: 300px) {
@@ -122,6 +123,7 @@ form {
     grid-template-areas:
       "figure header  header  header  header  header  header  header"
       "menu  menu  menu  menu  menu  menu  menu  menu"
+      "content content content content content content content content"
       "content content content content content content content content";
 
   }
@@ -134,9 +136,10 @@ form {
     grid-template-rows: 10vh 40vh 50vh ;
     grid-template-areas:
       "figure  header  "
-      "menu  content  "
-      "menu  content  ";
+      "menu  content"
+      "menu  content";
     }
+  }
     *********
   nav {
 	   justify-content: flex-start;
@@ -157,4 +160,138 @@ form {
 input {
   margin: 3%;
   }
+  /* accordian faq */
+  .accordion {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      transition: 0.4s;
+    }
+
+    .active, .accordion:hover {
+      background-color: #ccc;
+    }
+
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+    }
+    /* start of links.html */
+.wrapper-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  background-image: url("../images/architecture.jpg");
+  background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
 }
+ .main-contact {
+   height: 85%;
+   order: 2;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   flex-direction: row;
+ }
+.main-contact article {
+  height: 12vmin;
+  width: 50vmin;
+  background-color: rgba(51, 51, 51, 0.5);
+  border: 1vmin solid black;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 5%;
+}
+.main-contact section {
+  margin: 2.5%;
+}
+.facebook img {
+  height: 100%;
+  width: auto;
+}
+.facebook h2 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 4vmin;
+  margin: 10%;
+}
+.gmail img {
+  height: 50%;
+  width: auto;
+  margin-left: 5%;
+}
+.gmail h2 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 2.5vmin;
+  margin: 10%;
+}
+.twitter img {
+  height: 100%;
+  width: auto;
+}
+.twitter h2 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 3.5vmin;
+  margin: 10%;
+}
+.number img {
+  height: 70%;
+  width: auto;
+  margin-left: 5%;
+}
+.number h2 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 4vmin;
+  margin: 10%;
+}
+.button-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact_me img {
+  height: 70%;
+  width: auto;
+  margin-left: 5%;
+}
+.contact_me h2 {
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: 3.5vmin;
+  margin: 10%;
+}
+.main-contact article:hover {
+  transform: scale(1.1);
+}
+/* end of links.html */
