@@ -10,10 +10,8 @@
 </head>
 
 <body class="grid">
-
   <header>Manchester United F.C.</header>
-
-  <figure> <img src="images/logo.png" > </figure>
+  <figure> <img src="images/untlogo.png" > </figure>
   <nav id="menu-nav">
     <div class="menu">Menu</div>
     <ul>
@@ -24,9 +22,10 @@
     <li><a href="form.html">Form</a></li>
     <br>
     <li><a href="links.html">Links</a></li>
-    </nav>
+  </nav>
 
-    <main>
+  <main class="faq-main">
+    <a><section>
       <h2>Popular Questions and Answers</h2>
       <p>Click on the popular questions below to find out the answers!.</p>
       <button class="accordion">When was Manchester United F.C. founded? </button>
@@ -35,14 +34,47 @@
       </div>
       <button class="accordion">How many titles have Manchester United won?</button>
       <div class="panel">
-        <p>"Manchester United have won more trophies than any other club in English football,[5][6] with a record 20 League titles, 12 FA Cups, 5 League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup."</p>
+        <p>"Manchester United have won more trophies than any other club in English football, with a record 20 League titles, 12 FA Cups, 5 League Cups and a record 21 FA Community Shields. United have also won three UEFA Champions Leagues, one UEFA Europa League, one UEFA Cup Winners' Cup, one UEFA Super Cup, one Intercontinental Cup and one FIFA Club World Cup."</p>
       </div>
       <button class="accordion">What is one of Manchester United's greatest accomplishments?</button>
       <div class="panel">
-        <p>"In 1998–99, the club became the first in the history of English football to achieve the continental European treble.[7] By winning the UEFA Europa League in 2016–17, they became one of five clubs to have won all three main UEFA club competitions, and the only English club to have won every competition available to them."</p>
+        <p>"In 1998–99, the club became the first in the history of English football to achieve the continental European treble. By winning the UEFA Europa League in 2016–17, they became one of five clubs to have won all three main UEFA club competitions, and the only English club to have won every competition available to them."</p>
       </div>
-    </main>
-    <script src=".js/script.js">
-    </script>
+      <div>
+        <button class="accordion">Who is Manchester Uniteds all time leading goalscorer</button>
+        <div class="panel">
+          <p>Wayne Rooney<br>
+            "Bobby Charlton was Manchester United's highest all-time goalscorer until 2017, when his total of 249 goals was surpassed by previous club captain Wayne Rooney."</p>
+          </div>
+        </a></section>
+      </div>
+      <div>
+        <button class="accordion">Who is manchester united longest serving manager?</button>
+        <div class="panel">
+          <p>"Sir Alex Ferguson is the longest serving manager of Manchester United, having overtaken Sir Matt Busby's record on 19 December 2010. He retired from management at the end of the 2012–13 season, having won the Premier League in his final season."</p>
+        </div>
+      </a></section>
+    </div>
+    <h1 class="wiki-header">Anymore Questions?</h1>
+    <form id="searchForm" class="search-form">
+      <label class="wiki-label" for="wikiQuery">Search Wikipedia: </label>
+      <input id="wikiQuery" type="text" placeholder="Wiki Search">
+      <input class="submit-btn" type="submit">
+    </form>
+
+    <ul id="demo"></ul>
+  </main>
+  <nav id="menu-nav2">
+    <div class="menu">Menu</div>
+    <ul>
+    <li><a href="home.html">Home</a></li>
+    <br>
+    <li><a href="faq.html">FAQ</a></li>
+    <br>
+    <li><a href="form.html">Form</a></li>
+    <br>
+    <li><a href="links.html">Links</a></li>
+  </nav>
+  <script src=".js/script.js"></script>
   </body>
   </html>
