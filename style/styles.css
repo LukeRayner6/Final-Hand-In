@@ -28,7 +28,8 @@ body > * {
   /*grid-gap: 6px; */
   grid-template-areas:
     "header  header"
-    "menu    menu";
+    "menu    menu"
+    "footer footer";
 }
 
 
@@ -60,7 +61,7 @@ nav {
   margin: 0;
   padding: 0;
   background: darkred;
-  box-shadow: 4px 0px 5px 0px darkred;
+  box-shadow: 4px 4px 5px 0px darkred;
 }
 nav a {
   text-decoration: none;
@@ -120,10 +121,11 @@ main {
   background-color: rgba(166, 14, 22, 0.5);
   border-bottom: 1vmin solid rgba(166, 14, 22, 1);
   margin: 5%;
-  padding: 1%;
+  padding: 3%;
   box-shadow: 0 5px 20px black;
   border-radius: 5px;
   color: white;
+  margin-bottom: 10%;
 }
 form {
   display: flex;
@@ -133,10 +135,10 @@ form {
   border-bottom: 1vmin solid rgba(166, 14, 22, 1);
   color: white;
   width: 25%;
-  height: 50%;
-  padding: 1%;
+  padding: 3%;
   box-shadow: 0 5px 20px black;
   border-radius: 5px;
+  margin-bottom: 10%;
 }
 form input, form textarea {
   height: 5%;
@@ -174,7 +176,8 @@ form input, form textarea {
       "menu  menu  menu  "
       "content content content"
       "content content content"
-      "side side side";
+      "side side side"
+      "footer footer footer";
 
   }
 }
@@ -188,7 +191,8 @@ form input, form textarea {
     grid-template-areas:
       "figure  header header"
       "menu  content side"
-      "menu  content side";
+      "menu  content side"
+      "footer footer footer";
     }
   }
   nav {
@@ -205,6 +209,7 @@ input {
 #searchForm {
   height: auto;
   width: 50%;
+  margin-bottom: 10%;
 }
 .wrapper-home {
   height: 100%;
@@ -432,6 +437,7 @@ transform: scale(1.1);
   width: 100%;
   height: 100%;
 }
+
 .wiki-header {
   color: #DBE3DF;
 }
@@ -515,14 +521,13 @@ transform: scale(1.1);
 .main-contact article {
   height: 12vmin;
   width: 50vmin;
-  background-color: rgba(51, 51, 51, 0.5);
-  border: 1vmin solid black;
+  background-color: rgba(166, 14, 22, 0.5);
+  border-bottom: 1vmin solid rgba(166, 14, 22, 1);
   border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 5%;
 }
 .main-contact section {
   margin: 2.5%;
@@ -545,7 +550,7 @@ transform: scale(1.1);
 .gmail h2 {
   color: white;
   text-shadow: 2px 2px 2px black;
-  font-size: 2.5vmin;
+  font-size: 2vmin;
   margin: 10%;
 }
 .twitter img {
@@ -566,7 +571,7 @@ transform: scale(1.1);
 .instagram h2 {
   color: white;
   text-shadow: 2px 2px 2px black;
-  font-size: 3vmin;
+  font-size: 2.5vmin;
   margin: 10%;
 }
 .button-area {
@@ -574,12 +579,15 @@ transform: scale(1.1);
   justify-content: center;
   align-items: center;
 }
-.contact_me img {
+.contact_us {
+  margin-bottom: 15%;
+}
+.contact_us img {
   height: 70%;
   width: auto;
   margin-left: 5%;
 }
-.contact_me h2 {
+.contact_us h2 {
   color: white;
   text-shadow: 2px 2px 2px black;
   font-size: 3.5vmin;
